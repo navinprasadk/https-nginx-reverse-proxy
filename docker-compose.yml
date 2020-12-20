@@ -8,6 +8,6 @@ services:
       # Additional configuration file is stored under/conf directory in host machine  
       - ./conf/nginx-conf.conf:/etc/nginx/conf.d/nginx-conf.conf
       # /nginx/certs is the directory in host machine where ssl certificate and private key is stored 
-      - /nginx/certs/:/etc/ssl/certs/
+      - ./certs/:/etc/ssl/certs/
     ports:
       - 443:443
