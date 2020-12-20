@@ -1,0 +1,13 @@
+---
+# docker compose file to configure https using nginx
+version: '3.0'
+services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      # Additional configuration file is stored under/conf directory in host machine  
+      - ./conf/nginx-conf.conf:/etc/nginx/conf.d/nginx-conf.conf
+      # /nginx/certs is the directory in host machine where ssl certificate and private key is stored 
+      - /nginx/certs/:/etc/ssl/certs/
+    ports:
+      - 443:443
